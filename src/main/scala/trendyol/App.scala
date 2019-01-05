@@ -26,7 +26,7 @@ object App {
     )
 
     val dirOutputFiles = sys.env.getOrElse("OUTPUT_FILES_DIR", "/")
-    //val dirOutputFiles = "outputFiles"
+    //val dirOutputFiles = "resultFiles"
 
     val UniqueProductView = eventDataset.filter { x => x._2 == "view" }
       .map { x => (x._1, 1) }
