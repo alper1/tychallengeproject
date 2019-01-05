@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  tanalaysis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+  jobmanager:
+    image: flink:1.7.0
+    ports:
+      - "8083:8083"
+    command: jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+  taskmanager:
+    image: flink:1.7.0
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    links:
+      - "jobmanager:jobmanager"
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager

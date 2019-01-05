@@ -1,0 +1,12 @@
+# Author: Alper Kocabiyik
+
+An apache flink project written with scala running on docker to analyze user event data
+
+1- In project root (in the folder of docker-compose file)
+   run: docker-compose up
+
+docker-compose pulls the flink images and creates tanalysis image by using Dockerfile
+flink_jobmanager, flink_taskmanager and tanalysis (openjdk:10-jdk image with project .jar) docker containers will run
+
+2- Result documents will be saved in the tanalysis docker root
+
