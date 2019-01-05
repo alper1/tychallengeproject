@@ -10,3 +10,5 @@ flink_jobmanager, flink_taskmanager and tanalysis (openjdk:10-jdk image with pro
 
 2- Result documents will be saved in the tanalysis docker root
 
+result documents can be seen in /resultFiles folder
+
